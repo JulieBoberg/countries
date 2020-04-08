@@ -2,10 +2,12 @@ import React from "react";
 
 const Countries = ({ filteredCountries }) => {
   return (
-    <div>
-      <ul>
+    <div style={{ fontSize: "1.5em" }}>
+      <ul style={{ listStyle: "none" }}>
         {filteredCountries.map((country, i) => (
-          <li key={i}>{country.name}</li>
+          <li key={i}>
+            <strong>{country.name}</strong>
+          </li>
         ))}
       </ul>
     </div>

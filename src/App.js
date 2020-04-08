@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Countries from "./components/Countries";
+import Stats from "./components/Stats";
 
 function App() {
   // countries requested from API
@@ -39,7 +40,18 @@ function App() {
         {filteredCountries.length > 10 ? (
           "Please filter results further"
         ) : (
-          <Countries filteredCountries={filteredCountries} />
+          <Countries
+            filteredCountries={filteredCountries}
+            
+          />
+        )}
+      </div>
+
+      <div>
+        {filteredCountries.length === 1 ? (
+          <Stats filteredCountries={filteredCountries} />
+        ) : (
+          ""
         )}
       </div>
     </div>
